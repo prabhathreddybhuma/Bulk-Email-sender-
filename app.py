@@ -9,8 +9,8 @@ app.secret_key = 'your_secret_key'
 # Flask-Mail configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'bulkemail19@gmail.com'  # Your Gmail address
-app.config['MAIL_PASSWORD'] = 'gucg bfip fkng hnhj'  # Replace with your App Password
+app.config['MAIL_USERNAME'] = '______'  # Your Gmail address
+app.config['MAIL_PASSWORD'] = '______'  # Replace with your App Password
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
