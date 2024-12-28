@@ -1,121 +1,47 @@
-# 📧 Automatic Email Sender with Flask
+Bulk Email Sender 📧
 
----
+A simple and efficient tool to send bulk emails using a pre-designed email template. This project is designed to help users send personalized emails in bulk, making it perfect for marketing campaigns, event notifications, newsletters, or any situation requiring mass email distribution.
 
-## 🌟 Features
-- 🔒 **Secure Email Sending**: Uses SMTP to ensure email delivery.
-- 🎨 **User-Friendly UI**: Clean, responsive web interface for sending emails.
-- 🚀 **Fast and Reliable**: Sends emails in seconds.
-- 🔧 **Customizable**: Easy to integrate with any SMTP server.
+Features ✨
 
----
+Bulk Email Sending: Send emails to multiple recipients at once 📤
+Personalization: Include personalized details (such as recipient names) in each email ✉️
+Email Templates: Use a pre-designed email template for formatting the message 📑
+SMTP Integration: Uses SMTP server to send emails securely 🔒
+Email Status Tracking: Track the status of emails sent (success or failure) ✅❌
+Error Handling: Provides error messages for failed email deliveries ⚠️
+Requirements ⚙️
 
-## 🖼️ Project Overview
-### 🎥 Demo
-![App Demo](https://via.placeholder.com/800x400.png?text=Demo+Screenshot)
+Python 3.x: Ensure Python is installed on your machine 🐍
+Libraries: Install the required libraries using pip:
+pip install smtplib email-validator
+Installation 🛠️
 
----
+Clone the repository:
+git clone https://github.com/prabhathreddybhuma/Bulk-Email-sender.git
+Navigate to the project directory:
+cd Bulk-Email-sender
+Install dependencies:
+Ensure all dependencies are installed as listed above using pip 📥
+Configuration ⚙️
 
-## 📂 Folder Structure
-```plaintext
-email_sender/
-├── app.py               # Main Flask application
-├── templates/
-│   └── index.html       # HTML for the UI
-├── static/
-│   └── style.css        # CSS for styling
-└── README.md            # Project documentation
-```
+SMTP Server Setup:
+Update the SMTP server settings with your email provider's details:
+SMTP Host (e.g., smtp.gmail.com for Gmail)
+SMTP Port (typically 587 for TLS)
+Sender Email and Password: Provide the credentials of the email account from which you will send emails 🔑
+Recipient List:
+Prepare a list of recipients in a CSV file (e.g., contacts.csv) with the following columns:
+Name 👤
+Email 📧
+Email Template:
+Customize the email template in the code or in a separate file to personalize the message for each recipient 📝
+Usage 🚀
 
----
-
-## 🚀 Getting Started
-
-### 1️⃣ Prerequisites
-- Python 3.x installed.
-- Flask installed (`pip install flask`).
-- A valid email account with SMTP credentials.
-
-### 2️⃣ Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/automatic-email-sender.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd automatic-email-sender
-   ```
-3. Install dependencies:
-   ```bash
-   pip install flask
-   ```
-
----
-
-## 🔧 Configuration
-1. Open `app.py` and replace these placeholders with your email credentials:
-   ```python
-   EMAIL_ADDRESS = "your_email@gmail.com"
-   EMAIL_PASSWORD = "your_email_password"
-   ```
-2. Use an [app-specific password](https://support.google.com/accounts/answer/185833?hl=en) for Gmail.
-
----
-
-## 🎯 Usage
-1. Run the Flask application:
-   ```bash
-   python app.py
-   ```
-2. Open your browser and go to:
-   ```
-   http://127.0.0.1:5000/
-   ```
-3. Enter recipient email, subject, and message, then click **Send Email**. 🚀
-
----
-
-## 🌍 Live Preview
-_Coming Soon!_
-
----
-
-## 🤝 Contribution
-### 🛠️ How to Contribute
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature-branch
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Added a new feature"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature-branch
-   ```
-5. Open a Pull Request. 🚀
-
----
-
-## ❤️ Show Your Support
-- ⭐ Star this repository if you found it helpful!
-- 🤝 Contribute to make it better!
-
----
-
-## 📝 License
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
----
-
-## ✨ Acknowledgments
-- Flask Framework: [Flask](https://flask.palletsprojects.com/)
-- SMTP Email Integration: [Python smtplib](https://docs.python.org/3/library/smtplib.html)
-
----
-
-![Thank You](https://via.placeholder.com/150x150.png?text=Thank+You)  
-*Happy Coding! 💻✨*
-```
+Prepare the Contact List:
+Ensure the contact list CSV file is in the correct format and contains valid emails ✅
+Run the Script:
+Execute the bulk email sender script:
+python bulk_email_sender.py
+Monitor Progress:
+The script will send emails to all recipients in the contact list and provide a status report for each email 📊
