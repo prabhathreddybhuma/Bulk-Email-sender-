@@ -1,8 +1,5 @@
 # 📧 Automatic Email Sender with Flask
 
-![Email Sender Logo](https://via.placeholder.com/150x150.png?text=Logo)  
-*A simple yet powerful Flask-based application to send emails automatically!*
-
 ---
 
 ## 🌟 Features
