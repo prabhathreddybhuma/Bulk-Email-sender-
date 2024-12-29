@@ -10,63 +10,65 @@
 <body>
     <div class="container">
         <h1>Bulk Email Sender</h1>
-        
+
         <div class="form-wrapper">
             <form method="POST" enctype="multipart/form-data">
-                <!-- Left Section - Subject and Message -->
-                <div class="form-section left-section">
-                    <div class="form-group">
-                        <label for="subject">Email Subject</label>
-                        <input type="text" 
-                               name="subject" 
-                               id="subject" 
-                               required 
-                               placeholder="Enter email subject">
+                <div class="form-grid">
+                    <!-- Left Section - Subject and Message -->
+                    <div class="form-section">
+                        <h2>Email Details</h2>
+                        <div class="form-group">
+                            <label for="subject">Email Subject</label>
+                            <input type="text" 
+                                   name="subject" 
+                                   id="subject" 
+                                   required 
+                                   placeholder="Enter email subject">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Email Message</label>
+                            <textarea name="message" 
+                                      id="message" 
+                                      rows="8" 
+                                      required 
+                                      placeholder="Write your email message here..."></textarea>
+                            <small class="helper-text">Use <code>{name}</code> to personalize the message.</small>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="message">Email Message</label>
-                        <textarea name="message" 
-                                  id="message" 
-                                  rows="12" 
-                                  required 
-                                  placeholder="Write your email message here..."></textarea>
-                        <div class="helper-text">Use {name} to add recipient's name in the message</div>
-                    </div>
-                </div>
-
-                <!-- Right Section - Recipients -->
-                <div class="form-section right-section">
-                    <div class="recipient-options">
-                        <div class="form-group upload-section">
+                    <!-- Right Section - Recipients -->
+                    <div class="form-section">
+                        <h2>Recipients</h2>
+                        <div class="form-group">
                             <label for="csv_file">Upload CSV File</label>
                             <div class="file-upload-wrapper">
                                 <input type="file" 
                                        name="csv_file" 
                                        id="csv_file" 
                                        accept=".csv">
-                                <div class="file-upload-text">Drag & drop your CSV file or click to browse</div>
+                                <p class="file-upload-text">Drag & drop your CSV file or click to browse</p>
                             </div>
-                            <div class="helper-text">CSV should contain 'name' and 'email' columns</div>
+                            <small class="helper-text">Ensure your CSV contains <code>name</code> and <code>email</code> columns.</small>
                         </div>
 
                         <div class="divider">
                             <span>OR</span>
                         </div>
 
-                        <div class="form-group manual-section">
+                        <div class="form-group">
                             <label for="emails">Enter Emails Manually</label>
                             <textarea name="emails" 
                                       id="emails" 
-                                      rows="6" 
+                                      rows="5" 
                                       placeholder="email1@example.com, email2@example.com"></textarea>
-                            <div class="helper-text">Enter email addresses separated by commas</div>
+                            <small class="helper-text">Separate multiple email addresses with commas.</small>
                         </div>
                     </div>
+                </div>
 
-                    <button type="submit" class="submit-btn">
-                        Send Emails
-                    </button>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Send Emails</button>
                 </div>
             </form>
         </div>
@@ -89,5 +91,87 @@
             {% endif %}
         {% endwith %}
     </div>
+
+    <style>
+        /* Style improvements */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .form-wrapper {
+            padding: 1rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-section {
+            padding: 0.5rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .file-upload-wrapper {
+            border: 2px dashed #ccc;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .file-upload-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .helper-text {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .divider {
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </body>
 </html>
