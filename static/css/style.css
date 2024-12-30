@@ -1,195 +1,131 @@
-/* General Styles */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #CB997E, #DDBEA9, #FFE8D6, #B7B7A4, #A5A58D, #6B705C);
     background-size: 300% 300%;
-    animation: gradient-animation 10s ease infinite;
-    color: #333;
+    animation: gradientBackground 8s ease infinite;
 }
 
-/* Gradient Animation */
-@keyframes gradient-animation {
+@keyframes gradientBackground {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Container */
 .container {
-    max-width: 400px;
-    margin: 5% auto;
-    background: rgba(255, 255, 255, 0.15); /* Slightly transparent glass effect */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 600px;
+    margin: 2rem auto;
     padding: 2rem;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Header */
 h1 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
     color: #6B705C;
-    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-/* Form Styles */
+.form-wrapper {
+    padding: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 label {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
+    font-weight: 500;
     margin-bottom: 0.5rem;
     display: block;
+    color: #6B705C;
 }
 
 input, textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #DDBEA9;
+    border: 1px solid rgba(107, 112, 92, 0.4);
     border-radius: 8px;
     font-size: 1rem;
     background: rgba(255, 255, 255, 0.6);
-    color: #333;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #6B705C;
 }
 
 input:focus, textarea:focus {
-    outline: none;
     border-color: #CB997E;
-    box-shadow: 0 0 4px rgba(203, 153, 126, 0.6);
+    outline: none;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* File Upload Section */
 .file-upload-wrapper {
-    border: 2px dashed #A5A58D;
     padding: 1rem;
-    text-align: center;
+    border: 2px dashed rgba(107, 112, 92, 0.4);
     border-radius: 8px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.4);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    color: #6B705C;
+    background: rgba(255, 255, 255, 0.6);
 }
 
-.file-upload-wrapper:hover {
-    background-color: rgba(255, 255, 255, 0.6);
-    border-color: #6B705C;
-}
-
-.file-upload-text {
-    font-size: 1rem;
-    color: #333;
-}
-
-/* Submit Button */
 .submit-btn {
     display: block;
     width: 100%;
     padding: 0.75rem;
-    background-color: #6B705C;
-    color: #FFF;
+    background: linear-gradient(135deg, #CB997E, #DDBEA9);
     border: none;
     border-radius: 8px;
     font-size: 1rem;
+    color: white;
     font-weight: 600;
+    text-transform: uppercase;
     cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .submit-btn:hover {
-    background-color: #A5A58D;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #A5A58D, #6B705C);
 }
 
-.submit-btn:active {
-    background-color: #B7B7A4;
-    transform: translateY(0);
+.helper-text {
+    font-size: 0.85rem;
+    color: #A5A58D;
 }
 
-/* Flash Messages */
-.messages {
-    margin-top: 1.5rem;
-    list-style: none;
-    padding: 0;
+.divider {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #B7B7A4;
+    margin: 1rem 0;
+}
+
+.messages-container {
+    margin-top: 1rem;
 }
 
 .messages li {
-    padding: 1rem;
+    list-style: none;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
     border-radius: 8px;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    font-weight: 600;
+    background: rgba(255, 232, 214, 0.8);
+    color: #6B705C;
+    font-size: 0.95rem;
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.messages li.success {
-    background-color: #D4EDDA;
-    color: #155724;
-    border: 1px solid #C3E6CB;
-}
-
-.messages li.error {
-    background-color: #F8D7DA;
-    color: #721C24;
-    border: 1px solid #F5C6CB;
-}
-
-.message-icon {
-    margin-right: 10px;
-    font-size: 1.5rem;
-}
-
-.message-text {
-    flex: 1;
-}
-
-/* Divider */
-.divider {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #999;
-    margin: 1.5rem 0;
-    position: relative;
-}
-
-.divider span {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 0 12px;
-    border-radius: 4px;
-}
-
-.divider::before, .divider::after {
-    content: "";
-    display: block;
-    height: 1px;
-    background-color: #B7B7A4;
-    position: absolute;
-    top: 50%;
-    width: 40%;
-}
-
-.divider::before {
-    left: 0;
-}
-
-.divider::after {
-    right: 0;
+.messages .message-icon {
+    margin-right: 0.5rem;
+    font-weight: bold;
+    color: #CB997E;
 }
